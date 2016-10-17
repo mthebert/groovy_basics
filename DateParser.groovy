@@ -6,6 +6,9 @@ import org.joda.time.format.DateTimeFormat
 
 class DateParser {
 	def String parse(time){
+		if(time==null){
+			throw new IllegalArgumentException()
+		}
 		def printableTime = new DateTime(time)
 		def format = DateTimeFormat.forPattern('MM/dd/yyy - hh:mm aa')
 		return printableTime.toString(format)

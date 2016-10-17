@@ -3,6 +3,7 @@ def slurper = new XmlSlurper()
 def gpx = slurper.parse(inFile)
 
 def markupBuilder = new groovy.xml.StreamingMarkupBuilder()
+
 def xml = markupBuilder.bind{
 	route {
 		mkp.comment(gpx.name)
@@ -15,5 +16,5 @@ def xml = markupBuilder.bind{
 	}
 }
 
-def outFile = new File('./data/fells_loop_truncated.xml')
+def outFile = new File('fells_loop_truncated.xml')
 outFile.write(xml.toString())
