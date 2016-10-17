@@ -1,4 +1,6 @@
-@Grab(group='joda-time', module='joda-time', version='2.9.3')
+@Grapes (
+	@Grab(group='joda-time', module='joda-time', version='2.9.3')
+)
 import org.joda.time.DateTime
 import groovy.util.GroovyTestCase
 
@@ -6,7 +8,7 @@ class DateParserTests extends GroovyTestCase{
 	private DateParser parser
 
 	def void setUp(){
-		parser - new DateParser()
+		parser = new DateParser()
 	}
 
 	def void testCanParseDateTime(){
